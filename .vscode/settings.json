@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "markdown.marp.themes": [
+    "./kamata-theme.css"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  }
+}

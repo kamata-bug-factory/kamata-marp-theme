@@ -27,7 +27,7 @@
   --bg-accent: #f0ece7;
   --bg-accent-code: #e8e4de;
   --border-color: #d5d0ca;
-  --bg-table-header: #e0f0ed;
+  --bg-table-header: #e2ede9;
 
   /* フォントサイズ */
   --font-size-title: 38px;
@@ -37,7 +37,7 @@
   --font-size-small: 22px;
   --font-size-caption: 20px;
   --font-size-note: 16px;
-  --font-size-table: 18px;
+  --font-size-table: 22px;
 
   /* 行間 */
   --line-height-tight: 1.15;

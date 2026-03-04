@@ -47,9 +47,10 @@
   /* レイアウト */
   --slide-width: 1920px;
   --slide-height: 1080px;
-  --content-padding: 92px;
-  --border-radius: 8px;
-  --border-width: 1.47px;
+  --header-height: 80px;
+  --border-radius: 6px;
+  --border-radius-sm: 4px;
+  --border-width: 1.3px;
 }
 
 section.small-text {
@@ -60,7 +61,7 @@ section.small-text {
   --font-size-small: 18px;
   --font-size-caption: 16px;
   --font-size-note: 13px;
-  --font-size-table: 15px;
+  --font-size-table: 18px;
 
   /* 行間 */
   --line-height-tight: 1;
@@ -75,58 +76,40 @@ section.small-text {
 /* 基本的なマークダウンタグのスタイル */
 
 /* 見出しタグ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-bottom: 0;
+}
+
 h1 {
   font-size: var(--font-size-title);
   line-height: var(--line-height-tight);
-  font-weight: 600;
   margin-top: 6px;
   margin-bottom: 6px;
-  padding-bottom: 0;
 }
 
 h2 {
   font-size: var(--font-size-large);
   line-height: var(--line-height-tight);
-  font-weight: 600;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  padding-bottom: 0;
 }
 
-h3 {
-  font-size: var(--font-size-medium);
-  line-height: var(--line-height-normal);
-  font-weight: 600;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  padding-bottom: 0;
-}
+h3 { font-size: var(--font-size-medium); }
+h4 { font-size: var(--font-size-body); }
+h5 { font-size: var(--font-size-small); }
+h6 { font-size: var(--font-size-caption); }
 
-h4 {
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-normal);
-  font-weight: 600;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  padding-bottom: 0;
-}
-
-h5 {
-  font-size: var(--font-size-small);
-  line-height: var(--line-height-normal);
-  font-weight: 600;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  padding-bottom: 0;
-}
-
+h3,
+h4,
+h5,
 h6 {
-  font-size: var(--font-size-caption);
   line-height: var(--line-height-normal);
-  font-weight: 600;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  padding-bottom: 0;
 }
 
 h1 > strong,
@@ -202,7 +185,7 @@ code {
   background-color: var(--bg-accent-code);
   color: var(--gray-darkest);
   font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
   padding: 0.15em 0.4em;
 }
 
@@ -219,7 +202,7 @@ em {
   background-color: var(--bg-accent-code);
   font-size: var(--font-size-small);
   font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   border-left: 3px solid var(--accent-primary);
   margin-bottom: 8px;
 }
@@ -232,7 +215,7 @@ blockquote {
   margin: 12px 4px;
   font-style: italic;
   background-color: var(--bg-accent);
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
 
   &::after {
     display: none;
@@ -265,14 +248,14 @@ table {
   width: 100%;
   margin-bottom: 1rem;
   background-color: var(--white);
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   overflow: hidden;
 
   thead {
     th {
       background-color: var(--bg-table-header);
       color: var(--gray-dark);
-      border: 1.3px solid var(--border-color);
+      border: var(--border-width) solid var(--border-color);
       font-weight: 600;
     }
   }
@@ -281,7 +264,7 @@ table {
     tr {
       td {
         background-color: var(--white);
-        border: 1.3px solid var(--border-color);
+        border: var(--border-width) solid var(--border-color);
       }
     }
   }
@@ -299,7 +282,7 @@ section {
   background-image: none;
   font-family: var(--font-family);
   height: 100%;
-  padding: 100px 60px 0 60px;
+  padding: calc(var(--header-height) + 20px) 60px 0 60px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -316,17 +299,16 @@ section {
     width: 100%;
     top: 0;
     left: 0;
-    height: 80px;
+    height: var(--header-height);
     display: flex;
     align-items: center;
     padding-left: 40px;
-    color: var(--gray-medium);
     margin: 0;
 
     &::after {
       content: "";
       position: absolute;
-      top: 80px;
+      top: var(--header-height);
       left: 0;
       width: 100%;
       height: 2px;
@@ -339,7 +321,7 @@ section {
     position: absolute;
     top: 0px;
     right: 30px;
-    height: 80px;
+    height: var(--header-height);
     display: flex;
     align-items: center;
     padding: 0;
@@ -428,9 +410,9 @@ section {
     }
 
     p:has(img) {
-      height: calc(100% - 80px);
+      height: calc(100% - var(--header-height));
       position: absolute;
-      top: 80px;
+      top: var(--header-height);
       right: 0;
       display: flex;
       flex-direction: column;
@@ -471,9 +453,9 @@ section {
     }
 
     p:has(img) {
-      height: calc(100% - 80px);
+      height: calc(100% - var(--header-height));
       position: absolute;
-      top: 80px;
+      top: var(--header-height);
       left: 0;
       display: flex;
       flex-direction: column;

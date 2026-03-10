@@ -285,3 +285,14 @@ def example():
 画像に影（ドロップシャドウ）がつきます。
 
 ![w:600](https://placehold.co/600x400/ffffff/000000?text=Shadow+Effect)
+
+---
+
+<!-- _class: title -->
+<!-- _paginate: false -->
+
+<br>
+
+# ご清聴ありがとうございました
+
+<br>

@@ -18,7 +18,11 @@ paginate: true
 <!-- _class: section -->
 <!-- _paginate: false -->
 
+### Part 1
+
 ## 基本要素の確認
+
+#### テキスト・リスト・コードなど基本マークダウン要素
 
 ---
 
@@ -82,7 +86,7 @@ function hello() {
 
 # Small Text Class
 
-<!-- class: small-text -->
+<!-- _class: small-text -->
 
 このスライドは `small-text` クラスが適用されています。
 全体のフォントサイズが約20%縮小されます。
@@ -100,7 +104,11 @@ def example():
 <!-- _class: section -->
 <!-- _paginate: false -->
 
+### Part 2
+
 ## レイアウトバリエーション
+
+#### カラム・グリッド・画像配置など
 
 ---
 
@@ -135,15 +143,15 @@ def example():
 
 ---
 
-<!-- _class: column-layout -->
+<!-- _class: column-layout-2 -->
 
-# Column Layout
+# Column Layout 2
 
 <div class="column">
 
 ## Left Column
 
-`column-layout` クラスと `div.column` を使用して2カラムレイアウトを実現します。
+`column-layout-2` クラスと `div.column` を使用して2カラムレイアウトを実現します。
 
 - 左側のコンテンツ
 - リストなども配置可能
@@ -154,14 +162,68 @@ def example():
 
 ## Right Column
 
-右側のカラムです。
+右側のカラムです。カラム内では h1 もヘッダーバーにならず通常の見出しとして表示されます。
 
-```css
-.column-layout {
-  display: flex;
-  flex-direction: row;
-}
-```
+</div>
+
+---
+
+<!-- _class: toc -->
+
+# 目次 (TOC)
+
+1. **基本要素の確認**
+   テキスト・リスト・コードなど
+1. **レイアウトバリエーション**
+   カラム・グリッド・画像配置
+1. **カラーバリエーション**
+   テキストカラーユーティリティ
+1. **画像レイアウト**
+   image / content-image 系クラス
+
+---
+
+<!-- _class: grid -->
+
+# Grid レイアウト
+
+<div class="cell">
+
+## フロントエンド
+
+- React / Next.js
+- TypeScript
+- Tailwind CSS
+
+</div>
+
+<div class="cell">
+
+## バックエンド
+
+- Node.js
+- Python / FastAPI
+- PostgreSQL
+
+</div>
+
+<div class="cell">
+
+## インフラ
+
+- AWS Lambda
+- DynamoDB
+- CloudFront
+
+</div>
+
+<div class="cell">
+
+## ツール
+
+- GitHub Actions
+- Docker
+- Terraform
 
 </div>
 
@@ -169,7 +231,11 @@ def example():
 
 <!-- _class: section -->
 
+### Part 3
+
 ## カラーバリエーション
+
+#### テキストカラーユーティリティ
 
 ---
 
@@ -196,9 +262,35 @@ def example():
 
 ---
 
+<!-- _class: h1-text-center h2-text-teal -->
+
+# 個別見出しユーティリティ
+
+## h2 だけティールカラー
+
+`h1-text-center` で h1 のみ中央揃え、`h2-text-teal` で h2 のみティールカラーに変更できます。
+
+個別見出しユーティリティは `h1`〜`h6` の各レベルに対応しています。
+
+---
+
+<!-- _class: text-center text-amber -->
+
+# Text Center + Text Amber
+
+`text-center` は段落テキストのみ中央揃え、`text-amber` は段落テキストのみアンバーカラーにします。
+
+見出しには適用されません。
+
+---
+
 <!-- _class: section -->
 
+### Part 4
+
 ## 画像レイアウト
+
+#### image / content-image 系クラス
 
 ---
 
@@ -216,9 +308,7 @@ def example():
 
 # Content Image
 
-`content-image` クラス: テキストと画像を混在させる場合
-
-テキストが上にあり、その下に画像が配置されます。
+> `content-image` クラス: テキストと画像を混在させるレイアウト。テキストは blockquote 形式で記述する。
 
 ![w:500](https://placehold.co/500x300/png)
 
@@ -233,7 +323,7 @@ def example():
 右半分に画像が配置されます。
 テキストは左側に配置されます。
 
-![bg right:50%](https://placehold.co/800x1080/1a7a6d/ffffff?text=Right+Image)
+![w:800](https://placehold.co/800x600/1a7a6d/ffffff?text=Right+Image)
 
 ---
 
@@ -246,7 +336,7 @@ def example():
 画像エリアが30%になります。
 テキストエリアが広くなります。
 
-![bg right:30%](https://placehold.co/400x1080/c47a2a/ffffff?text=30%)
+![w:400](https://placehold.co/400x600/c47a2a/ffffff?text=30%25)
 
 ---
 
@@ -259,7 +349,7 @@ def example():
 左半分に画像が配置されます。
 テキストは右側に配置されます。
 
-![bg left:50%](https://placehold.co/800x1080/3e3a36/ffffff?text=Left+Image)
+![w:800](https://placehold.co/800x600/3e3a36/ffffff?text=Left+Image)
 
 ---
 
@@ -272,7 +362,7 @@ def example():
 画像エリアが70%になります。
 テキストエリアは狭くなります。
 
-![bg left:70%](https://placehold.co/1000x1080/2d2926/ffffff?text=70%)
+![w:1000](https://placehold.co/1000x600/2d2926/ffffff?text=70%25)
 
 ---
 
